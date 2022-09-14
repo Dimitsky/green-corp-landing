@@ -312,7 +312,7 @@ body {
 .promo__image {
     flex-shrink: 0;
     width: 50%;
-    background: no-repeat center / cover url('../img/promo.jpg');
+    background: no-repeat center / cover url('img/promo.jpg');
 }
 
 .promo__right {
