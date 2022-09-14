@@ -302,6 +302,68 @@ body {
 
 /* 
 
+========== promo
+
+*/
+
+.promo {
+    display: flex;
+}
+
+.promo__image {
+    flex: 0 0 50%;
+    background: no-repeat center / cover url('../img/promo.jpg');
+}
+
+.promo__right {
+    padding: 160px 60px;
+    background: #dd5f26;
+}
+
+.promo__box {
+    border-radius: 25px;
+    padding: 30px 40px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    background: #fff;
+}
+
+.promo__box > p {
+    position: relative;
+    opacity: 0.8;
+}
+
+.promo__box > p::before {
+    content: '';
+    display: inline-block;
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+    background: #ec6b29;
+}
+
+.promo__button-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.promo__to-order {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background: #107b1c;
+}
+
+.promo__to-order > svg {
+    height: 0.8333em;
+}
+
+/* 
+
 ========== footer
 
 */
@@ -523,6 +585,27 @@ body {
 
     .cards {
         grid-template-columns: auto;
+    }
+
+    /* 
+
+    ========== promo
+
+    */
+
+    .promo {
+        flex-direction: column;
+    }
+
+    .promo__image {
+        order: 1;
+        width: 100%;
+        height: 500px;
+    }
+
+    .promo__right {
+        order: 0;
+        padding: 50px 10px;
     }
 
     /* 
