@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="main.css">
     <script src="js/all.min.js" defer></script>
     <script src="js/canvas.js" defer></script>
+    <script src="js/animations.js" defer></script>
     <title>Солнечные батареи GreenCorp</title>
 </head>
 <body>
@@ -69,7 +70,8 @@
         <div class="features__feedback">
             <div class="features__feedback-left">
                 <h2>
-                    Нам доверяет <br> 5000+ счастливых клиентов
+                    Нам доверяет <br> 
+                    <div class="features__clients-count">5000+</div> счастливых клиентов
                 </h2>
                 <p>
                     Мы помогли тысячам людей перейти на зеленую энергию. <br> После заказа мы позаботимся обо всем: доставка панелей, проект, установка, помощь в использовании
@@ -150,7 +152,7 @@
                         <option value="10-30">10 000₽ – 30 000₽</option>
                         <option value="30-60">30 000₽ – 60 000₽</option>
                         <option value="60-100">60 000₽ – 100 000₽</option>
-                        <option value="100+">100 000₽</option>
+                        <option value="other">Другое</option>
                     </select>
                 </div>
                 <button class="btn form-contacts__submit" type="submit">Отправить заявку</button>
