@@ -1,4 +1,5 @@
 const INCREASE_NUMBER_ANIMATION_SPEED = 50;
+let animationInited = false;
 
 function increaseNumberAnimationStep (i, element, endNumber) {
     if (i <= endNumber) {
@@ -18,8 +19,6 @@ function initIncreaseNumberAnimation() {
 
     increaseNumberAnimationStep(0, element, 5000);
 }
-
-initIncreaseNumberAnimation();
 
 document.querySelector('#budget').addEventListener('change', function handleSelectChange(event) {
     if (event.target.value === 'other') {
@@ -42,3 +41,43 @@ document.querySelector('#budget').addEventListener('change', function handleSele
         document.querySelector('.contacts form').removeChild(otherInput); // Задание 4
     }
 });
+
+function updateScroll() {
+    if (window.scrollY > 0) {
+        const header = document.querySelector('header');
+
+        header.classList.add('header__scrolled');
+    } else {
+        const header = document.querySelector('header');
+
+        header.classList.remove('header__scrolled');
+    }
+
+    // Запуск анимации увеличения числа
+    let windowBottomPosition = window.scrollY + window.innerHeight;
+    let countElementPosition = document.querySelector('.features__clients-count').offsetTop;
+
+    if (windowBottomPosition >= countElementPosition && !animationInited) {
+        initIncreaseNumberAnimation();
+        animationInited = true;
+    }
+}
+
+window.addEventListener('scroll', updateScroll);
+
+function addSmoothScroll(link) {
+    link.addEventListener('click', onLinkClick);
+}
+
+function onLinkClick(event) {
+    event.preventDefault();
+
+    document.querySelector(event.target.getAttribute('href')).scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    addSmoothScroll(anchor);
+});
+addSmoothScroll(document.querySelector('.about__more'));
